@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:left;padding: 40px;">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+<form #myform="ngForm" (ngSubmit)="onformsubmit(myform)"> 
+  <div>
+<label>Name</label>
+<input type="text" ngModel name="name" required>
+</div>
+  <div>
+<label>Email</label>
+<input type="text"  ngModel name="email" required>
+</div>
+  <div>
+<label>Password</label>
+<input type="text" ngModel name="phone" required>
+</div>
+  <div>
+<label>Option</label>
+  <select ngModel name="option" required>
+    <option value="{{p.option}}" *ngFor="let p of products">{{p.option}}</option>
+   
+  </select>
+  </div>
+  <input type="submit" value="Submit"><br>
+  <div *ngIf="formvalue">
+    {{formvalue.name}}
+ Form data: {{myform.value | json}}<br>
+ Form status:  {{myform.valid | json}}
+ 
+</div>
+</form>
+
